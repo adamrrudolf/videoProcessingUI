@@ -1,0 +1,98 @@
+.videoPreview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--item-background);
+    border-radius: 20px;
+    margin: 30px;
+    padding: 20px;
+  }
+  
+.videoPreviewImage {
+    width: 700px;
+    height: 394px;
+    background-image: url("/img/createVideoImage.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+    margin: 5px;
+}
+
+.videoPreviewWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.videoPreviewOptions {
+  max-width: 500px;
+}
+
+.videoPreviewDescription {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-01);
+  width: 100%;
+  height: 188px;
+  border-radius: 20px;
+}
+
+.videoPreviewDescriptionTextarea {
+  border: none;
+  resize: none;
+  margin: 20px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--text-01);
+  height: 100px;
+  &::placeholder {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--secondary-01);
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.videoPreviewListenButton {
+  background-color: var(--background-03);
+  color: var(--secondary-01);
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  padding: 6px 20px;
+  border: none;
+}
+
+.videoPreviewButtonWrapper {
+  margin-left: 30px;
+  margin-bottom: 13px;
+}
+
+[data-app~="video.actor.actor"] .actor {
+  color: var(--interactive);
+}
+[data-app~="video.actor.voice"] .voice {
+  color: var(--interactive);
+}
+[data-app~="video.actor.alignment"] .alignment {
+  color: var(--interactive);
+}
+[data-app~="video.actor.background"] .background {
+  color: var(--interactive);
+}
+
+.topSecondaryButton {
+  margin-right: 20px;
+}

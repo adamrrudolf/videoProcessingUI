@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600");
+
+:root {
+  --primary-01: #46B13D;
+  --primary-02: #1C7714;
+  --text-01: #222222;
+  --text-02: #000000;
+  --text-03: #333333;
+  --text-04: #181059;
+  --text-05: #666666;
+  --interactive: #3860AD;
+  --background-01: #FFFFFF;
+  --background-02: #EBF2FF;
+  --background-03: #F1F1F1;
+  --secondary-01: #999999;
+  --placeholder: #CCCCCC;
+  --focused: #5C90F3;
+  --sidebar-border: #0000001a;
+  --wrong-password: #FF0000;
+  --item-background: #F4F4F4;
+  --icon-active: #EBF2FF;
+  --logout-button: #EE6363;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin backgroundGraphic{
+  background-image: url("/img/background_graphic.svg");
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 200px;
+}
+
+.app {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+.accountTabs {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.accountTab {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22px;
+  color: var(--secondary-01);
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.buttonApp {
+  padding: 6px 20px;
+  border-radius: 6px;
+  background: var(--primary-01);
+  border: none;
+  color: var(--background-01);
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  cursor: pointer;
+}
+
+.buttonAppSecondary {
+  padding: 6px 20px;
+  border-radius: 6px;
+  background: var(--background-03);
+  border: none;
+  color: var(--secondary-01);
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  cursor: pointer;
+}
+
+.buttonLogout {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22px;
+  /* identical to box height */
+  text-align: right;
+  cursor: pointer;
+  color: var(--logout-button);
+  // no border
+  border: none;
+  background-color: var(--background-01);
+}
+
+@mixin disabledButton {
+  background: #999999;
+  color: #CCCCCC;
+  cursor: not-allowed;
+}
+
+[data-app~="checking"] .buttonApp {
+  @include disabledButton;
+}
+
+.formWrapper1 {
+  margin-bottom: 20px;
+}
+
+[data-app~="login"], [data-app~="signup"] {
+  .mainWrapper {
+    @include backgroundGraphic;
+  }
+} 
+
+
+[data-responsive*='desktop'] [data-app~='login'],
+[data-responsive*='desktop'] [data-app~='checking'] {
+  .formWrapper1 {
+    margin-top: 163px;
+  }
+}
+
+[data-responsive*='desktop'] [data-app~='signup'] .formWrapper1 {
+  margin-top: 50px;
+}
+
+.formWrapper2 {
+  margin-bottom: 30px;
+}
+
+.formWrapper3 {
+  margin-bottom: 63px;
+}
+
+.mainWrapper {
+  width: 100%;
+  height: 100%;
+}
+
+[data-responsive*="desktop"] .mainWrapper {
+  background-size: 345px;
+}
+
+.mainContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.interactiveText {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 19.5px;
+  color: var(--interactive);
+  cursor: pointer;
+}
+
+.signupWrapper {
+  display: flex;
+}
+
+.signupTitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-01);
+  line-height: 20px;
+}
+
+.strongLabel {
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: var(--primary-01);
+  padding-right: 2px;
+  display: none;
+}
+
+[data-app~="signup.strongPassword"] .strongLabel {
+  display: block;
+}
+
+.topBar {
+  width: calc(100% - 60px);
+  height: 104px;
+  margin: 0px 30px;
+}
+
+[data-app~="video"] .topBar {
+  border-bottom: 1px solid var(--sidebar-border);
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topBarTitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text-01);
+  line-height: 33px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+[data-responsive*="desktop"] .topBarTitle {
+  padding: 35px;
+}
+
+.topBarRight {
+  display: flex;
+  margin-right: 40px;
+}
+
+.videoList {
+  display: flex;
+}
+
+.videoItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--item-background);
+  border-radius: 6px;
+  margin: 30px;
+}
+
+.videoItemImage {
+  width: 100%;
+  height: 155px;
+  background-image: url("/img/videoThumbnail.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 6px;
+  margin: 5px;
+}
+
+.videoItemOptions {
+  background-image: url("/img/overflowIcon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.videoItemOption {
+  display: none;
+}
+
+.videoItemTitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-01);
+  line-height: 18.75px;
+  margin: 11px 0px 13px 0px;
+}
+
+.videoItemTags {
+  display: flex;
+  margin-bottom: 14px;
+}
+
+.videoItemTag {
+  border: 1px solid var(--secondary-01);
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding: 3px 13px;
+  margin-left: 5px;
+  color: var(--secondary-01);
+}
+
+.wrongPassword {
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: var(--wrong-password);
+  padding-right: 2px;
+  display: none;
+}
+
+[data-app~="login.wrongPassword"] .wrongPassword {
+  display: block;
+}

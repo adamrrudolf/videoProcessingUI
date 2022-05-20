@@ -1,0 +1,147 @@
+.plans {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.plan {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0px 20px 20px;
+    padding: 20px 0px 20px 20px;
+    background-color: var(--background-01);
+    width: 260px;
+    border-radius: 10px;
+}
+
+.planTitle {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 33px;
+    color: var(--text-01);
+    margin-bottom: 20px;
+}
+
+.planDetail {
+    display: flex;
+    width: 80%;
+}
+
+.planDetailIconYes {
+    background-image: url(/img/yesPlan.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+.planDetailIconNo {
+    background-image: url(/img/noPlan.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+.planDetailSentence {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: var(--text-03);
+}
+
+.planPrice {
+    margin-top: 12px;
+    display: flex;
+}
+
+.planPriceCurrency {
+    font-family: 'Poppins';
+    font-style: bold;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 25.5px;
+    color: var(--text-04);
+    padding-top: 13px;
+}
+
+.planPriceValue {
+    font-family: 'Poppins';
+    font-style: bold;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 45px;
+    color: var(--text-04);
+}
+
+.planButtonWrapper {
+    margin-top: 11px;
+}
+
+.planButton {
+    height: 48px;
+    width: 212px;
+    background-color: var(--background-02);
+    border: none;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: var(--interactive);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+@mixin currentPlan{
+    background-color: var(--primary-01);
+    margin-top: 0px;
+    .planTitle, .planDetailSentence, .planPriceCurrency, .planPriceValue {
+        color: var(--background-01);
+    }
+    .planDetailIconYes {
+        background-image: url(/img/yesPlanCurrent.svg);
+    }
+    .planDetailIconNo {
+        background-image: url(/img/noPlanCurrent.svg);
+    }
+    .planButton {
+        background-color: var(--primary-01);
+        color: var(--primary-02);
+        cursor: default;
+    }
+}
+
+[data-app~="video.account.plan.team"] {
+    .team {
+        @include currentPlan;
+    }
+}
+
+[data-app~="video.account.plan.free"] {
+    .free {
+        @include currentPlan;
+    }
+}
+
+[data-app~="video.account.plan.pro"] {
+    .pro {
+        @include currentPlan;
+    }
+}
+
+[data-app~="video.account.plan.agency"] {
+    .agency {
+        @include currentPlan;
+    }
+}
