@@ -38,6 +38,7 @@ body {
   height: 100vh;
   width: 100vw;
   display: flex;
+  overflow: hidden;
 }
 
 .accountTabs {
@@ -45,6 +46,8 @@ body {
   height: 60px;
   align-items: center;
   padding-left: 10px;
+  padding-right: 10px;
+  overflow: auto;
 }
 
 .accountTab {
@@ -247,7 +250,7 @@ body {
 }
 
 .videoItemImage {
-  width: 100%;
+  width: 260px;
   height: 155px;
   background-image: url("/img/videoThumbnail.png");
   background-repeat: no-repeat;
@@ -312,4 +315,27 @@ body {
 
 [data-app~="login.wrongPassword"] .wrongPassword {
   display: block;
+}
+
+[data-responsive*="mobile"] {
+  .topBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .topBarRight {
+    margin-right: 15px;
+    margin-left: auto;
+  }
+  .accountTab {
+    margin-left: 15px;
+  }
+}
+
+[data-responsive~="mobileS"] {
+  .topBarTitle {
+    font-size: 18px;
+  }
 }

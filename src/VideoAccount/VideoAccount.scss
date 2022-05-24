@@ -9,3 +9,7 @@
 [data-app~="video.account.plan"] .accountPlan {
     color: var(--interactive);
 }
+
+.accountContent {
+    overflow: auto;
+}

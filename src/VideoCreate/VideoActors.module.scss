@@ -3,6 +3,12 @@
     flex-wrap: wrap;
 }
 
+[data-responsive*="mobile"] {
+    .actorsContainer {
+        margin-left: 40px;
+    }
+}
+
 .actorWrapper {
     display: flex;
     flex-direction: column;
