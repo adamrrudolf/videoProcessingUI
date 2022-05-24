@@ -10,7 +10,7 @@ export const appMachine =
     },
   },
   id: "app",
-  initial: "video",
+  initial: "login",
   states: {
     signup: {
       initial: "idle",
@@ -55,7 +55,7 @@ export const appMachine =
       },
     },
     video: {
-      initial: "actor",
+      initial: "browse",
       states: {
         browse: {
           on: {

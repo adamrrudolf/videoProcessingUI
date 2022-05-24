@@ -21,3 +21,13 @@
     color: var(--interactive);
     background: var(--background-02);
 }
+
+[data-responsive*="mobile"] {
+    .videoAlignmentContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+    .videoAlignment {
+        width: 150px;
+    }
+}
