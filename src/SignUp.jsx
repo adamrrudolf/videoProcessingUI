@@ -27,7 +27,7 @@ export default function Login() {
           />
         </div>
         <div className="formWrapper3">
-          <button className="buttonApp">Signup</button>
+          <button className="buttonApp" onClick={() => appService.send('SIGN_UP')}>Signup</button>
         </div>
         <div className="signupWrapper">
           <div className="signupTitle">Already user?&nbsp;</div>
